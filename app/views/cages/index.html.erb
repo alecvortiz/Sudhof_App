@@ -1,0 +1,49 @@
+  <p>
+    <a <%= link_to 'Add Cage', new_user_cage_path(current_user), :class => "btn btn-success btn-s" %> </a>
+  </p>
+
+<p>
+  <%= form_tag cages_path, method: :get do |f| %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+  <% end %> 
+</p>
+
+<% @cages.each do |cage| %>
+
+  <p><strong><%= cage.line %></strong></p>
+
+ 
+
+  <p><%= cage.cage_type %></p>
+
+  <p><%= cage.num_litters %> litter(s)</p>
+
+  <p> 
+    <% if cage.pups == "Yes" %> 
+      Has pups 
+      <img src="../img/pups.png" WIDTH=50 HEIGHT=auto>
+    <% else %>
+      No pups
+    <% end %>
+  </p>
+
+  <p> 
+    <% num = cage.animals.count %> 
+    <% if num == 1 %>
+    <%= num %> mouse
+    <% else %>
+    <%= num %> mice
+    <% end %>
+  </p>
+
+  <tr>
+    <td><%= link_to 'Show Cage', user_cage_path(current_user, cage) %> | </td>     
+    <td><%= link_to 'Edit Cage', edit_user_cage_path(current_user, cage) %> | </td>
+    <td><%= link_to 'Destroy Cage', [current_user, cage],
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' }%> | </td>
+    <td><%= link_to 'Add Animal', new_cage_animal_path(cage) %></td>
+  </tr>
+
+<% end %>

@@ -1,0 +1,18 @@
+<% if !animal.genotype.nil? %>
+	<p>
+		<strong><%= animal.genotype %> <img src= "../img/mouse2.png" HEIGHT = 50 WIDTH = auto></strong>
+		<p>Tag #: <%= animal.tag %></p>
+		<p>DOB: <%= animal.dob %></p>
+		<p>Gender: <%= animal.gender %></p>
+		<p>Virus: <%= animal.virus %></p>
+	</p>
+
+	<% if @cage.user == current_user %>
+		<p>
+			<%= link_to 'Edit Mouse', edit_cage_animal_path(@cage, animal) %> 
+			<p><%= link_to 'Delete Mouse', [@cage, animal],
+			   method: :delete,
+			   data: { confirm: 'Are you sure?' } %></p>
+		</p>
+	<% end %>
+<% end %>

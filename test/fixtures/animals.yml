@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dob: 2015-08-09
+  gender: MyString
+  genotype: MyString
+  cage_id: 1
+  tag: 1
+  virus: MyString
+
+two:
+  dob: 2015-08-09
+  gender: MyString
+  genotype: MyString
+  cage_id: 1
+  tag: 1
+  virus: MyString

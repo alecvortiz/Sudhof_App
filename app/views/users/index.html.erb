@@ -1,0 +1,31 @@
+
+<% def inferno() %>
+<%  cages = Cage.all %>
+<%  cages.each do |cage| %>
+<%  if cage.user.nil?  %>
+<%    cage.animals.each do |animal| %>
+<%        animal.delete %>
+<%    end %>
+<%  cage.delete %>
+<%  end %>
+<% end %>
+<% end %>
+<% inferno %>
+
+<h1> Users </h1>
+
+<p> 
+	<%= form_tag users_path, method: :get do |f| %>
+	<%= text_field_tag :q, params[:q] %>
+	<%= submit_tag "Search" %>
+	<% end %> 
+</p>
+
+<% @users.each do |user| %>     
+	<p><%= link_to user.email, cages_personal_path(user) %></p>
+<% end %>
+
+<h3> Total Researchers: <%= User.count %> </h3> 
+
+
+<h3> Total Cages: <%= Cage.count %> </h3>

@@ -1,0 +1,35 @@
+<% user = User.find params[:id] %>
+
+<% user.cages.each do |cage| %>
+
+<strong><p><%= cage.line %></p></strong>
+
+<p><%= cage.cage_type %></p>
+
+<p><%= cage.num_litters %> litters </p>
+
+<p> 
+	<% if cage.pups %> 
+	Has pups
+	<img src="../img/pups.png" WIDTH=50 HEIGHT=auto>
+	<% else %>
+	No pups
+	<% end %>
+</p>
+
+	<p>
+		<% num = cage.animals.count %> 
+		<% if num == 1 %>
+		<%= num %> mouse
+		<% else %>
+		<%= num %> mice
+		<% end %>
+	</p>
+
+<p>
+     <tr>
+       <td><%= link_to 'Show Cage', cage_path(cage) %> </td>   
+     </tr>
+</p>
+
+<% end %>
