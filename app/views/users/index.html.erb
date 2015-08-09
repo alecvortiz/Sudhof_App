@@ -22,7 +22,8 @@
 </p>
 
 <% @users.each do |user| %>     
-	<p><%= link_to user.email, cages_personal_path(user) %></p>
+	<p>Researcher: <%= link_to user.name, user_path(user)%> - <%= link_to "Cages", cages_personal_path(user)%></p>
+
 <% end %>
 
 <h3> Total Researchers: <%= User.count %> </h3> 

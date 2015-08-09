@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root 'cages#index'
 
+  # root 'welcome#index'
+
+
   get '/personal/:id' => 'cages#personal', as: :cages_personal
 
   resources :users do

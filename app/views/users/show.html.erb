@@ -1,0 +1,22 @@
+<div class="container">
+
+    <% user = User.find params[:id] %>
+    <h1><%=user.name%> Info <%= link_to 'Edit User', edit_user_path(user), :class => 'btn btn-default' %> 
+     <%= link_to 'Delete User', @user,
+            method: :delete, :class => 'btn btn-danger',
+	        data: {confirm: 'Are you sure you want to delete this user?'}  
+	    %></h1>
+        <p>Email: <%= user.email %> </p>
+        <p>Name: <%= user.name %></p>
+        <p>Role: <%= user.role %></p>
+        <p>Id: <%= user.id %></p>
+    
+    
+        <h1>Opportunities</h1>
+        
+    
+    <%= link_to 'Back to All Users', users_path, :class => "btn btn-default" %>
+    <br>
+    <br>
+
+</div>
