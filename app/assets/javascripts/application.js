@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/bootstrap
+//= require Chart.js
+//= require gritter-conf.js
+//= require sparkline-chart.js
+//= require zabuto_calendar.js
+//= require common-scripts.js
 //= require_tree .

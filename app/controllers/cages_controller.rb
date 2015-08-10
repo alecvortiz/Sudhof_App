@@ -20,7 +20,7 @@ class CagesController < ApplicationController
 	 def create
 	 	@cage = current_user.cages.create(cages_params)
 	 	if @cage.save
-	 		redirect_to user_cages_path, notice: "Cage successfully created."
+	 		redirect_to cages_path, notice: "Cage successfully created."
 	 	else
 	 		render 'new'
 	 	end
@@ -34,7 +34,7 @@ class CagesController < ApplicationController
 	 def update
  	    @cage = current_user.cages.find(params[:id])
   		if @cage.update(cages_params)
-   	    	redirect_to user_cages_path
+   	    	redirect_to cages_path
    	    else 
    			render 'edit'
    		end
@@ -43,7 +43,7 @@ class CagesController < ApplicationController
 	 def destroy
 	 	cage = current_user.cages.find params[:id]
 	 	cage.destroy
-	 	redirect_to "/", notice: "Cage successfully deleted."
+	 	redirect_to cages_path, notice: "Cage successfully deleted."
 	 end
 
 	 private 

@@ -26,6 +26,8 @@
 
 <h2>Animals:</h2>
 <%= render @cage.animals %>
+<h3> Total Animals: <%= @cage.animals.count %> </h3> 
+
 
 <h2>Add Animal:</h2>
 <% if @cage.user == current_user %>

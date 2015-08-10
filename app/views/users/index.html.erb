@@ -22,7 +22,7 @@
 </p>
 
 <% @users.each do |user| %>     
-	<p>Researcher: <%= link_to user.name, user_path(user)%> - <%= link_to "Cages", cages_personal_path(user)%></p>
+	<p> <%=user.name%>: <%= link_to "Edit User", user_path(user)%> | <%= link_to "View Cages", cages_personal_path(user)%></p>
 
 <% end %>
 

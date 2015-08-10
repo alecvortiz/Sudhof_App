@@ -10,6 +10,13 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap/glyphicons
  *= require_tree .
+ *= require font-awesome.css
+ *= require bootstrap.css
+ *= require style.css
+ *= require style_copy.css
+ *= require style-responsive.css
+ *= require zabuto_calendar.css
  *= require_self
  */

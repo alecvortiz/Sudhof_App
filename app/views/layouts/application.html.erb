@@ -3,7 +3,6 @@
 <head>
   <title>SudhofApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -45,7 +44,7 @@
         
             <% if user_signed_in? %>
               <li><%= link_to 'Home', root_path, :class => 'navbar-link'  %></li>
-              <li><%= link_to 'My Cages', user_cages_path(current_user), :class => 'navbar-link'  %></li>
+              <li><%= link_to 'My Cages', cages_path, :class => 'navbar-link'  %></li>
               <li><%= link_to 'Create Cage', new_user_cage_path(current_user), :class => 'navbar-link'  %></li>
               <li><%= link_to 'All Users', users_path, :class => 'navbar-link'  %></li>
               <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
@@ -64,6 +63,7 @@
 </nav>
 
 <%= yield %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 </body>
 </html>
