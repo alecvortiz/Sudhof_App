@@ -20,7 +20,7 @@ class CagesController < ApplicationController
 	 def create
 	 	@cage = current_user.cages.create(cages_params)
 	 	if @cage.save
-	 		redirect_to cages_path, notice: "Cage successfully created."
+	 		redirect_to cages_path
 	 	else
 	 		render 'new'
 	 	end
@@ -40,10 +40,19 @@ class CagesController < ApplicationController
    		end
 	 end
 
+	 def personal
+	 	@user = User.find params[:id]
+	 	if params[:q]
+			@cages = @user.cages.where("LOWER(line) LIKE ? or LOWER(cage_type) LIKE ?", "%#{params[:q].downcase}%", "%#{params[:q].downcase}%")
+		else
+		   @cages = @user.cages
+		end
+	 end
+
 	 def destroy
 	 	cage = current_user.cages.find params[:id]
 	 	cage.destroy
-	 	redirect_to cages_path, notice: "Cage successfully deleted."
+	 	redirect_to cages_path
 	 end
 
 	 private 

@@ -1,3 +1,4 @@
+<div class="pagina">
 <div class="container">
     <h1>Edit User</h1>
     <%= simple_form_for(@user, url: user_path(@user.id), html: { method: :put }) do |f| %>
@@ -9,4 +10,5 @@
         <%= f.submit :class => "btn btn-success" %> <%= link_to 'Back', user_path(@user), :class => 'btn btn-default' %>
     <% end %>
     
+</div>
 </div>

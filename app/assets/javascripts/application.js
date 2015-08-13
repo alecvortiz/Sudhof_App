@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require highcharts
+//= require chartkick
 //= require turbolinks
 //= require twitter/bootstrap
 //= require Chart.js

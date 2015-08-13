@@ -12,6 +12,7 @@
 <% end %>
 <% inferno %>
 
+<div class="pagina">
 <h1> Users </h1>
 
 <p> 
@@ -21,12 +22,17 @@
 	<% end %> 
 </p>
 
-<% @users.each do |user| %>     
-	<p> <%=user.name%>: <%= link_to "Edit User", user_path(user)%> | <%= link_to "View Cages", cages_personal_path(user)%></p>
+<% @users.each do |user| %>    
+<div class = "user"> 
+	<p> <h4><strong><%=user.name + " "%></strong><i class="fa fa-user"></i>
 
+
+	</h4> <%= link_to "Edit User", user_path(user), :class => "btn btn-warning btn-xs"%> <%= link_to "View Cages", cages_personal_path(user), :class => "btn btn-info btn-xs"%></p>
+</div>
 <% end %>
 
 <h3> Total Researchers: <%= User.count %> </h3> 
 
 
 <h3> Total Cages: <%= Cage.count %> </h3>
+</div>

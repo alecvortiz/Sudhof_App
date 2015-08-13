@@ -1,5 +1,8 @@
+<div class="pagina">
+
 <h2> Cage: </h2>   
 
+<div class="cage">
 <strong><p><%= @cage.line %></p></strong>
 
 <p><%= @cage.cage_type %></p>
@@ -23,14 +26,17 @@
 	<%= num %> mice
 	<% end %>
 </p>
+</div>
 
-<h2>Animals:</h2>
-<%= render @cage.animals %>
 <h3> Total Animals: <%= @cage.animals.count %> </h3> 
+<%= render @cage.animals %>
 
 
 <h2>Add Animal:</h2>
+
 <% if @cage.user == current_user %>
 	<%= render 'animals/form' %>
 <% end %>
+
+</div>
 

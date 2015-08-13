@@ -1,4 +1,6 @@
+
 <% if !animal.genotype.nil? %>
+<div class="animal">
 	<p>
 		<strong><%= animal.genotype %> <img src= "../img/mouse2.png" HEIGHT = 50 WIDTH = auto></strong>
 		<p>Tag #: <%= animal.tag %></p>
@@ -9,10 +11,11 @@
 
 	<% if @cage.user == current_user %>
 		<p>
-			<%= link_to 'Edit Mouse', edit_cage_animal_path(@cage, animal) %> 
-			<p><%= link_to 'Delete Mouse', [@cage, animal],
+			<%= link_to 'Edit Mouse', edit_cage_animal_path(@cage, animal), :class => "btn btn-warning btn-xs" %> 
+			<%= link_to 'Delete Mouse', [@cage, animal],
 			   method: :delete,
-			   data: { confirm: 'Are you sure?' } %></p>
+			   data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
 		</p>
 	<% end %>
+	</div>
 <% end %>
