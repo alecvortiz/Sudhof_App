@@ -1,12 +1,16 @@
 class CagesController < ApplicationController
 
-	def index
-		@cages = current_user.cages
+	def index		
 		if params[:q]
 			@cages = current_user.cages.where("LOWER(line) LIKE ? or LOWER(cage_type) LIKE ?", "%#{params[:q].downcase}%", "%#{params[:q].downcase}%")
 		else
 		   @cages = current_user.cages
 		end
+		respond_to do |format|
+    		format.html
+    		format.csv { send_data @cages.to_csv }
+    		format.xls 
+  		end
 	 end
 
 	 def show
@@ -47,6 +51,11 @@ class CagesController < ApplicationController
 		else
 		   @cages = @user.cages
 		end
+		respond_to do |format|
+    		format.html
+    		format.csv { send_data @cages.to_csv }
+    		format.xls 
+  		end
 	 end
 
 	 def destroy

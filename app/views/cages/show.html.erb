@@ -2,7 +2,7 @@
 
 <h2> Cage: </h2>   
 
-<div class="cage">
+<div class="cage" draggable="true">
 <strong><p><%= @cage.line %></p></strong>
 
 <p><%= @cage.cage_type %></p>
@@ -32,11 +32,14 @@
 <%= render @cage.animals %>
 
 
+<% if @cage.user == current_user %>
+
 <h2>Add Animal:</h2>
 
-<% if @cage.user == current_user %>
 	<%= render 'animals/form' %>
 <% end %>
 
 </div>
+
+
 

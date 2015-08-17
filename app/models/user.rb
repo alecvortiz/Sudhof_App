@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :cages
+  has_many :solutions
 
   enum role: [:user, :admin]
 

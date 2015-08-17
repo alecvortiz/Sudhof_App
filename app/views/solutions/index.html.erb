@@ -1,0 +1,25 @@
+<div class="pagina">
+<h1> Saved Recipes </h1>
+
+<%= link_to 'New Solution', new_user_solution_path, :class => "btn btn-info btn" %>
+
+<div class="index_page">
+<table>
+	<% @solutions.each do |solution| %>
+	<p>
+	</p>
+			<strong><i class="fa fa-flask"></i><%= solution.name %></strong>
+			<p>
+			<%= link_to 'View', user_solution_path(current_user, solution), :class => "btn btn-success btn-xs" %>  	
+			<%= link_to 'Edit', edit_user_solution_path(current_user, solution), :class => "btn btn-warning btn-xs" %>  
+			<%= link_to 'Incinerate', [current_user, solution],
+							method: :delete,
+							data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs" %>
+			</p>	
+		<p>
+	    </p>
+
+	<% end %>
+</table>
+</div>
+</div>	

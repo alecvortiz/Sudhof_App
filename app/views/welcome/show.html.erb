@@ -1,0 +1,21 @@
+<div class="pagina">
+<h1>Help Page</h1>
+-----------------------------------------
+	<h3>1. Creating Cages</h3>
+	<p>To create a new mouse cage click the "Create Cage" tab in the navigation bar to the left. Upon clicking the tab, you will be redirected to a form in which you may specify the type of cage, genotype of animals, etc. After creating a cage you will be redirected to the "My Cages" page where you can view, edit, and delete previously created cages. </p>
+	<p>
+	<h3>2. Adding Mice </h3>
+	<p> To add animals to a cage, simply click on the "My Cages" tab in the navigation bar and click the "add animal" button on the cage you would like to populate. Upon clicking the button, you will be redirected to a form in which you may specify the genotype, date of birth, gender, etc. After hitting the "create animal" button you will be redirected to the view page for the cage in which the animal was added and the new mouse will be visible.
+	</p>
+	<h3>3. My Cages </h3>
+	<p> The "My Cages" page shows all of your cages. You can search for cages by cage type or genotype using the search bar at the top of the page. The graphs to the left display the percentage of cages you have by genotype and cage type. Finally, by clicking the "Excel" button you can download an excel sheet that holds all the data (both cages and mice) held in my cages.
+	</p>
+	<h3> 4. Changing your Passowrd </h3>
+	<p> You can change your password at any time by clicking the "edit profile" button at the top right corner of the screen.
+	</p>
+	<% if current_user.role == "admin" %>
+	<h3> 5. All Users </h3>
+	<p> By clicking on the "all users" tab in the navigation bar, admins can view the profiles of all users as well as their cages and animals. On the "all users" page you can use the search bar to find particular users and view their cages by clicking on the "view cages" button in their profile box.
+	</p>
+	<% end %>
+</div>

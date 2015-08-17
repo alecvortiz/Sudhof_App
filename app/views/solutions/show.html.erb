@@ -1,0 +1,84 @@
+<div class="pagina">
+<% sol1 = 0, sol2 = 0, sol3 = 0, sol4 = 0, sol5 = 0, final_vol = 0%>
+
+<h1><%= @solution.name %></h1>
+
+<div class= "solute_names_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_one_n %></p>
+  <p>Stock: <%= @solution.stock_one %> M</p>
+  <p>Desired: <%= @solution.solute_one %> M</p>
+  <p><strong>Needed: <%= sol1 = (@solution.solute_one * @solution.final_volume / @solution.stock_one).round(2) %> mL</strong></p>
+  </div>
+</div>
+
+<% if !@solution.solute_two.nil? %>
+<div class= "solutes_2">
+  <div class="col-med-offset-3 col-md-2">
+	<p>Solute: <%= @solution.solute_two_n %></p>
+  <p>Stock: <%= @solution.stock_two %> M</p>
+  <p>Desired: <%= @solution.solute_two %> M</p>
+  <p><strong>Needed: <%= sol2 = (@solution.solute_two * @solution.final_volume / @solution.stock_two).round(2) %> mL </strong></p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_three.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_three_n %></p>
+  <p>Stock: <%= @solution.stock_three %> M</p>
+  <p>Desired: <%= @solution.solute_three %> M</p>
+  <p><strong>Needed: <%= sol3 = (@solution.solute_three * @solution.final_volume / @solution.stock_three).round(2) %> mL</strong></p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_four.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_four_n %></p>
+  <p>Stock: <%= @solution.stock_four %> M</p>
+  <p>Desired: <%= @solution.solute_four %> M</p>
+  <p><strong>Needed: <%= sol4 = (@solution.solute_four * @solution.final_volume / @solution.stock_four).round(2) %> mL</strong></p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_five.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_five_n %> </p>
+  <p>Stock: <%= @solution.stock_five %> M</p>
+  <p>Desired: <%= @solution.solute_five %> M</p>
+  <p><strong>Needed: <%= sol5 = (@solution.solute_five * @solution.final_volume / @solution.stock_five).round(2) %> mL</strong></p>
+  </div>
+</div>
+<% end %> 
+
+<div>
+<p>
+  -
+</p>
+<p>
+  -
+</p>
+<p>
+-
+</p>
+
+<p> <strong>Solvent Needed: <%= final_vol = (@solution.final_volume - sol1 - sol2 - sol3 - sol4 - sol5).round(2) %> mL</strong></p>
+
+<div class="row">
+<p>
+<p><strong><h4> Final Volume: <%= @solution.final_volume %> mL</h4></strong></p>
+</p>
+</div>
+
+<% if @solution.final_volume < sol1 || final_vol < sol2 || final_vol < sol3 || final_vol < sol4 || final_vol < sol5 %>
+  <h2> This solution cannot be created with the desired concentrations. </h2>
+<% end %>
+
+</div>
+
+

@@ -1,0 +1,203 @@
+
+<div class="new">
+<div class="pagina">
+
+<h1> Editing elixir </h1>
+
+<%= simple_form_for([current_user, @solution], multipart: true) do |f| %>
+        <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li>
+                  <a href="#1" data-toggle="tab">Basic Info</a>
+                </li>
+                <li>
+                    <a href="#2" data-toggle="tab">Solute One</a>
+                </li>   
+                <li>
+                    <a href="#3" data-toggle="tab">Solute Two</a>
+                </li> 
+                <li>
+                    <a href="#4" data-toggle="tab">Solute Three</a>
+                </li> 
+                <li>
+                    <a href="#5" data-toggle="tab">Solute Four</a>
+                </li> 
+                <li>
+                    <a href="#6" data-toggle="tab">Solute Five</a>
+                </li> 
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane" id="1">      
+                    <div class = "modal_body">
+                        <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                  <%= f.input :name, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "modal_body">
+                        <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :final_volume, :label  => "Final Volume", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane" id="2">
+                	<div class = "modal_body">
+                        <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :solute_one_n, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "modal_body">
+                        <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <p>
+                                    <%= f.input :stock_one, :label => "Stock Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <p>
+                             	<%= f.input :solute_one, :label => "Final Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                             </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="tab-pane" id="3">
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :solute_two_n, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :stock_two, :label  => "Stock Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :solute_two, :label  => "Final Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>  
+            <div class="tab-pane" id="4">
+               <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :solute_three_n, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :stock_three, :label  => "Stock Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :solute_three, :label  => "Final Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="tab-pane" id="5">
+                <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :solute_four_n, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :stock_four, :label  => "Stock Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :solute_four, :label  => "Final Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>      
+            </div>
+            <div class="tab-pane" id="6">
+                <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                                <%= f.input :solute_five_n, :label  => "Solute Name", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :stock_five, :label  => "Stock Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class = "modal_body">
+                          <div class="row">
+                            <div class="col-med-offset-3 col-md-6">
+                             <%= f.input :solute_five, :label  => "Final Concentration", :label_html => { :class => 'text-right' }, :input_html=> { :class => "form-control" } %>
+                            </div>
+                          </div>
+                        </div>
+                    </div>      
+            </div>
+            <div class="modal-footer">
+                   <%= f.submit 'Update Solution', :class => "btn btn-success" %>
+                </div>    
+            </div>
+        </div>
+<% end %>
+
+</div>
+
+
+</div>

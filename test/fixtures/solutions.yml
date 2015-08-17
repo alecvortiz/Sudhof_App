@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  solute_one: 1.5
+  solute_two: 1.5
+  solute_three: 1.5
+  solute_four: 1.5
+  solute_five: 1.5
+  name: MyString
+  solute_one_n: MyString
+  solute_two_n: MyString
+  solute_three_n: MyString
+  solute_four_n: MyString
+  solute_five_n: MyString
+  final_volume: 1.5
+
+two:
+  solute_one: 1.5
+  solute_two: 1.5
+  solute_three: 1.5
+  solute_four: 1.5
+  solute_five: 1.5
+  name: MyString
+  solute_one_n: MyString
+  solute_two_n: MyString
+  solute_three_n: MyString
+  solute_four_n: MyString
+  solute_five_n: MyString
+  final_volume: 1.5

@@ -2,6 +2,8 @@ class AnimalsController < ApplicationController
 	def create
     @cage = Cage.find(params[:cage_id])
     @animal = @cage.animals.create(animal_params)
+    @cage.num_mice = @cage.animals.count
+    @cage.save
     redirect_to cage_path(@cage)
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150809141434) do
+ActiveRecord::Schema.define(version: 20150815025332) do
 
   create_table "animals", force: :cascade do |t|
     t.date     "dob"
@@ -33,6 +33,30 @@ ActiveRecord::Schema.define(version: 20150809141434) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.float    "solute_one"
+    t.float    "solute_two"
+    t.float    "solute_three"
+    t.float    "solute_four"
+    t.float    "solute_five"
+    t.string   "name"
+    t.string   "solute_one_n"
+    t.string   "solute_two_n"
+    t.string   "solute_three_n"
+    t.string   "solute_four_n"
+    t.string   "solute_five_n"
+    t.float    "final_volume"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.float    "stock_one"
+    t.float    "stock_two"
+    t.float    "stock_three"
+    t.float    "stock_four"
+    t.float    "stock_five"
+    t.string   "c_metric"
+    t.string   "v_metric"
   end
 
   create_table "users", force: :cascade do |t|

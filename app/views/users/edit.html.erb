@@ -5,7 +5,7 @@
         <strong>Email Assigned to Account: </strong> <%= @user.email %>
         <p><%= f.input :name, placeholder: "Name", :label => "Account Name", :class => 'text-right', :input_html=> { :class => "form-control" }  %></p>
         <%= f.input :role, as: :string, label: "Check box to make admin:" do %>
-            <%= f.check_box :role, {}, "admin", "employee" %>
+            <%= f.check_box :role, {}, "admin", "user" %>
         <% end %>
         <%= f.submit :class => "btn btn-success" %> <%= link_to 'Back', user_path(@user), :class => 'btn btn-default' %>
     <% end %>

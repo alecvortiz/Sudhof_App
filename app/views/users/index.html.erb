@@ -13,7 +13,7 @@
 <% inferno %>
 
 <div class="pagina">
-<h1> Users </h1>
+<h1> Researchers </h1>
 
 <p> 
 	<%= form_tag users_path, method: :get do |f| %>
@@ -27,7 +27,7 @@
 	<p> <h4><strong><%=user.name + " "%></strong><i class="fa fa-user"></i>
 
 
-	</h4> <%= link_to "Edit User", user_path(user), :class => "btn btn-warning btn-xs"%> <%= link_to "View Cages", cages_personal_path(user), :class => "btn btn-info btn-xs"%></p>
+	</h4> <%= link_to "View User", user_path(user), :class => "btn btn-success btn-xs"%> <%= link_to "View Cages", cages_personal_path(user), :class => "btn btn-info btn-xs"%></p>
 </div>
 <% end %>
 

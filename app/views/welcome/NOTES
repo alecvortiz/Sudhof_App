@@ -1,0 +1,110 @@
+  <%= link_to "CSV", cages_path(format: "csv"), :class => "btn btn-default btn-xs" %> 
+
+
+
+
+<div class= "solute_names_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_one_n %></p>
+  <p>Stock: <%= @solution.stock_one %> M</p>
+  <p>Desired: <%= @solution.solute_one %> M</p>
+  <p>Needed: <%= sol1 = (@solution.solute_one * @solution.final_volume / @solution.stock_one).round(2) %> mL</p>
+  </div>
+</div>
+
+<% if !@solution.solute_two.nil? %>
+<div class= "solutes_2">
+  <div class="col-med-offset-3 col-md-2">
+	<p>Solute: <%= @solution.solute_two_n %></p>
+  <p>Stock: <%= @solution.stock_two %> M</p>
+  <p>Desired: <%= @solution.solute_two %> M</p>
+  <p>Needed: <%= sol2 = (@solution.solute_two * @solution.final_volume / @solution.stock_two).round(2) %> mL </p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_three.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_three_n %></p>
+  <p>Stock: <%= @solution.stock_three %> M</p>
+  <p>Desired: <%= @solution.solute_three %> M</p>
+  <p>Needed: <%= sol3 = (@solution.solute_three * @solution.final_volume / @solution.stock_three).round(2) %> mL</p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_four.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_four_n %></p>
+  <p>Stock: <%= @solution.stock_four %> M</p>
+  <p>Desired: <%= @solution.solute_four %> M</p>
+  <p>Needed: <%= sol4 = (@solution.solute_four * @solution.final_volume / @solution.stock_four).round(2) %> mL</p>
+  </div>
+</div>
+<% end %>
+
+<% if !@solution.solute_five.nil? %>
+<div class= "stocks_2">
+  <div class="col-med-offset-3 col-md-2">
+  <p>Solute: <%= @solution.solute_five_n %> </p>
+  <p>Stock: <%= @solution.stock_five %> M</p>
+  <p>Desired: <%= @solution.solute_five %> M</p>
+  <p>Needed: <%= sol5 = (@solution.solute_five * @solution.final_volume / @solution.stock_five).round(2) %> mL</p>
+  </div>
+</div>
+<% end %> 
+
+
+
+<div>
+<p>
+  -
+</p>
+<p>
+  -
+</p>
+<p> Needed Solvent Volume: <%= final_vol = (@solution.final_volume - sol1 - sol2 - sol3 - sol4 - sol5).round(2) %> mL</p>
+
+<p> Final Volume: <%= @solution.final_volume %> mL</p>
+
+
+<li class="sub-menu">
+                     <%= link_to user_solutions_path(current_user) do %>
+                            <i class="fa fa-book"></i> My Solutions
+                          <% end %>
+                      <ul class="sub">
+                          <li><a  href="basic_table.html">Basic Table</a></li>
+                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                      </ul>
+                  </li>
+
+                   <li class="sub-menu">
+                      <%= link_to new_user_solution_path(current_user) do %>
+                            <i class="fa fa-flask"></i> Create Solution
+                          <% end %>
+                      <ul class="sub">
+                          <li><a  href="general.html">General</a></li>
+                          <li><a  href="buttons.html">Buttons</a></li>
+                          <li><a  href="panels.html">Panels</a></li>
+                      </ul>
+                  </li>
+
+
+
+                    <% if count == 0 %>
+    <% x = cage.line %>
+    <h3><%= x %></h3>
+    <% count = 1 %>
+    <% cage_count = cage_count + 1 %>
+  <% else %>
+    <% y = cage.line %>
+    <% if x != y %>
+      <h3> Cages: <%= cage_count %> </h3>
+      <% cage_count = 0 %>
+      <h2><%= y %></h2>
+      <% x = y %>
+    <% end %>
+    <% cage_count = cage_count + 1 %>
+  <% end %>

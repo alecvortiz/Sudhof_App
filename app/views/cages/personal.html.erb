@@ -9,7 +9,35 @@
   <% end %> 
 </p>
 
-<% @cages.each do |cage| %>
+<p>
+  Download Spreadsheet:
+  <%= link_to "Excel", cages_path(format: "xls"), :class => "btn btn-default btn-xs" %>
+</p>
+
+<div class="chart" style="float: right; width: 500px;border:3px solid black; background:lightgreen">
+                        <h3> Cages by Genotype </h3>
+                        <p><%= pie_chart @user.cages.group(:line).count %></p>
+                        <h3> Cages by Type </h3>
+                        <p><%= pie_chart @user.cages.group(:cage_type).count %></p>
+                        </div>
+
+<% count = 0 %>
+<% x = "" %>
+<% y = "" %>
+<% @cages.order(:line, :created_at).reverse.each do |cage| %>
+
+<% if count == 0 %>
+    <% x = cage.line %>
+    <h3><%= x %></h3>
+    <% count = 1 %>
+  <% else %>
+    <% y = cage.line %>
+    <% if x != y %>
+      <h2><%= y %></h2>
+      <% x = y %>
+    <% end %>
+  <% end %>
+
 <p>
 </p>
 <div class="cage">

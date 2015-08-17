@@ -16,6 +16,11 @@
   <% end %> 
 </p>
 
+<p>
+  Download Spreadsheet:
+  <%= link_to "Excel", cages_path(format: "xls"), :class => "btn btn-default btn-xs" %>
+</p>
+
     <a <%= link_to 'Add Cage', new_user_cage_path(current_user), :class => "btn btn-info btn-s" %> </a>
 <p>
 
@@ -27,9 +32,26 @@
                         <h3> Cages by Type </h3>
                         <p><%= pie_chart current_user.cages.group(:cage_type).count %></p>
                         </div>
+<% count = 0 %>
+<% x = "" %>
+<% y = "" %>
+<% cage_count = 0 %>
+<% @cages.order(:line, :created_at).reverse.each do |cage| %>
 
-<% @cages.each do |cage| %>
-                       
+
+<% if count == 0 %>
+    <% x = cage.line %>
+    <h3><%= x %></h3>
+    <% count = 1 %>
+  <% else %>
+    <% y = cage.line %>
+    <% if x != y %>
+      <h2><%= y %></h2>
+      <% x = y %>
+    <% end %>
+  <% end %>
+
+
  <div class="cage">  
  <p><strong><%= cage.line %></strong></p>
 
@@ -40,20 +62,19 @@
   <p> 
     <% if cage.pups == "Yes" %> 
       Has pups 
-      <img src="../img/pups.png" WIDTH=50 HEIGHT=auto>
+      <img src="../img/pups.png" WIDTH=30 HEIGHT=auto>
     <% else %>
       No pups
     <% end %>
   </p>
+ <% cage.animals.each do |animal| %>
+<div class="mice"><strong><%= animal.tag %><img src= "../img/mouse2.png" HEIGHT = 15 WIDTH = auto></strong></div>
+<% end %>
 
-  <p> 
-    <% num = cage.animals.count %> 
-    <% if num == 1 %>
-    <%= num %> mouse
-    <% else %>
-    <%= num %> mice
-    <% end %>
-  </p>
+<p>
+
+</p>
+
 
   <tr>
     <td><%= link_to 'View Cage', cage_path(cage), :class => "btn btn-success btn-xs" %> </td>     
@@ -71,10 +92,14 @@
   <p>
 
   </p>
+
 <% end %>
 
 
 <h3> Total Cages: <%= @cages.count %> </h3>  
 
+
+
 </div>
+
 

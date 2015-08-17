@@ -1,5 +1,5 @@
-<div class="centered">
 <div class="pagina">
+<h2> Add Animal </h2>
 <%= simple_form_for([@cage, @cage.animals.build]) do |f| %>
                                                                   
   <%= f.input :dob , as: :date, start_year: Date.today.year - 90, end_year: Date.today.year,
@@ -16,5 +16,4 @@
 <%= f.submit :class => "btn btn-success" %>
                
 <% end %>
-</div>
 </div>

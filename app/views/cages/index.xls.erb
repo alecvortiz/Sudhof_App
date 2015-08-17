@@ -1,0 +1,33 @@
+<Workbook>
+  <Worksheet>
+    <table border="1">
+      <tr>
+        <th>Cage Number</th>
+        <th>Type</th>
+        <th>Line</th>
+        <th>Number of Mice</th>
+        <th>Number of Litters</th>
+        <th>Pups</th>
+        <th>Tag</th>
+        <th>DOB</th>
+        <th>Gender</th>
+      </tr>
+      <% @cages.each do |cage| %>
+      <% mice = cage.animals %>
+        <% mice.each do |mouse| %>
+      <tr>
+        <td><%= cage.id %></td>
+        <td><%= cage.cage_type %></td>
+        <td><%= cage.line %></td>
+        <td><%= cage.num_mice %></td>
+        <td><%= cage.num_litters %></td>
+        <td><%= cage.pups %></td>
+        <td><%= mouse.tag %></td>
+        <td><%= mouse.dob %></td>
+        <td><%= mouse.gender %></td>
+      <% end %>
+      </tr>
+      <% end %>
+    </table>
+  </Worksheet>
+</Workbook>

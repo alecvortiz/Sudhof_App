@@ -9,6 +9,16 @@ Premium: http://www.gridgum.com
 /* Import fonts */
 @import url(http://fonts.googleapis.com/css?family=Ruda:400,700,900);
 
+.mice {
+  padding-left: 0px;
+
+}
+
+.meese {
+    position: relative;
+    top: -180px
+}
+
 /* BASIC THEME CONFIGURATION */
 body {
     color: #797979;
@@ -17,6 +27,11 @@ body {
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
+}
+
+.welcome {
+    text-align: center;
+   
 }
 
 .cage {
@@ -30,6 +45,12 @@ body {
 .pagina {
     padding: 65px;
     padding-left: 250px;
+}
+
+.spec-pag {
+    position: relative;
+    top: 50%;
+    left: 50%;
 }
 
 .animal {

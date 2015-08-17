@@ -3,13 +3,13 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  # root 'welcome#index'
-
+  get 'welcome/show'
 
   get '/personal/:id' => 'cages#personal', as: :cages_personal
 
   resources :users do
     resources :cages
+    resources :solutions
   end
 
   resources :cages do
