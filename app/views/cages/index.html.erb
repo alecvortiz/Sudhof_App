@@ -1,6 +1,26 @@
 
 <%= javascript_include_tag "path/to/highcharts.js", "chartkick" %>
 
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="2" data-sizex="2" data-sizey="1"></li>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
+    </ul>
+</div>
 
 <div class="pagina">
 <p>
@@ -51,7 +71,6 @@
     <% end %>
   <% end %>
 
-
  <div class="cage">  
  <p><strong><%= cage.line %></strong></p>
 
@@ -67,6 +86,7 @@
       No pups
     <% end %>
   </p>
+   
  <% cage.animals.each do |animal| %>
 <div class="mice"><strong><%= animal.tag %><img src= "../img/mouse2.png" HEIGHT = 15 WIDTH = auto></strong></div>
 <% end %>
