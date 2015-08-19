@@ -35,7 +35,7 @@
 <% x = "" %>
 <% y = "" %>
 <% cage_count = 0 %>
-<% @cages.order(:line, :created_at).reverse.each do |cage| %>
+<% @cages.order(:line, :cage_type, :created_at).reverse.each do |cage| %>
 
 
 <% if count == 0 %>

@@ -1,8 +1,8 @@
+<% curr_id = -1 %>
 <Workbook>
   <Worksheet>
     <table border="1">
       <tr>
-        <th>Cage Number</th>
         <th>Type</th>
         <th>Line</th>
         <th>Number of Mice</th>
@@ -10,20 +10,30 @@
         <th>Pups</th>
         <th>Tag</th>
         <th>DOB</th>
+        <th>Genotype</th>
         <th>Gender</th>
       </tr>
       <% @cages.each do |cage| %>
       <% mice = cage.animals %>
         <% mice.each do |mouse| %>
       <tr>
-        <td><%= cage.id %></td>
-        <td><%= cage.cage_type %></td>
-        <td><%= cage.line %></td>
-        <td><%= cage.num_mice %></td>
-        <td><%= cage.num_litters %></td>
-        <td><%= cage.pups %></td>
+        <% if cage.id != curr_id %>
+          <td><%= cage.cage_type %></td>
+          <td><%= cage.line %></td>
+          <td><%= cage.num_mice %></td>
+          <td><%= cage.num_litters %></td>
+          <td><%= cage.pups %></td>
+          <% curr_id = cage.id %>
+        <% else %>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        <% end %>
         <td><%= mouse.tag %></td>
         <td><%= mouse.dob %></td>
+        <td><%= mouse.genotype %></td>
         <td><%= mouse.gender %></td>
       <% end %>
       </tr>
