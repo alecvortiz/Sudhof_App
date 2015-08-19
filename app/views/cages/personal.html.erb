@@ -50,20 +50,19 @@
 <p> 
 	<% if cage.pups %> 
 	Has pups
-	<img src="../img/pups.png" WIDTH=50 HEIGHT=auto>
+	<img src="../img/pups.png" WIDTH=30 HEIGHT=auto>
 	<% else %>
 	No pups
 	<% end %>
 </p>
 
-	<p>
-		<% num = cage.animals.count %> 
-		<% if num == 1 %>
-		<%= num %> mouse
-		<% else %>
-		<%= num %> mice
-		<% end %>
-	</p>
+<% cage.animals.order(:tag).each do |animal| %>
+<div class="mice"><strong><%= animal.tag %><img src= "../img/mouse2.png" HEIGHT = 15 WIDTH = auto></strong></div>
+<% end %>
+
+<p>
+
+</p>
 
 <p>
      <tr>

@@ -12,6 +12,7 @@
         <th>DOB</th>
         <th>Genotype</th>
         <th>Gender</th>
+        <th>Virus</th>
       </tr>
       <% @cages.each do |cage| %>
       <% mice = cage.animals %>
@@ -35,6 +36,7 @@
         <td><%= mouse.dob %></td>
         <td><%= mouse.genotype %></td>
         <td><%= mouse.gender %></td>
+        <td><%= mouse.virus %></td>
       <% end %>
       </tr>
       <% end %>

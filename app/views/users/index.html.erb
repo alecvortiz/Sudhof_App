@@ -25,6 +25,9 @@
 <% @users.each do |user| %>    
 <div class = "user"> 
 	<p> <h4><strong><%=user.name + " "%></strong><i class="fa fa-user"></i>
+	<p>
+	</p>
+	<p>Total Cages: <%= user.cages.count %></p>
 
 
 	</h4> <%= link_to "View User", user_path(user), :class => "btn btn-success btn-xs"%> <%= link_to "View Cages", cages_personal_path(user), :class => "btn btn-info btn-xs"%></p>
