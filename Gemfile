@@ -36,7 +36,7 @@ gem "highcharts-rails", "~> 3.0.0"
 
 gem 'groupdate'
 
-group :production, :test do
+group :production do
   gem 'pg'
 end
 
@@ -49,7 +49,7 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development do
+group :development. :test do
   gem 'sqlite3'
 
   gem 'pry-rails'
