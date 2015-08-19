@@ -59,6 +59,11 @@ class CagesController < ApplicationController
   		end
 	 end
 
+	 def stats
+	 	user = User.find params[:id]
+	 	@cages = user.cages 
+	 end
+
 	 def destroy
 	 	cage = current_user.cages.find params[:id]
 	 	cage.destroy

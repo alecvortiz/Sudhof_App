@@ -115,16 +115,6 @@
                   <% end %>
 
                   <li class="sub-menu">
-                      <%= link_to cages_path do %>
-                            <i class="fa fa-th"></i> My Cages
-                      <% end %>                      
-                      <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
                       <%= link_to new_cage_path do %>
                             <i class="fa fa-cogs"></i> Create Cage
                           <% end %>
@@ -136,8 +126,8 @@
                   </li>
 
                   <li class="sub-menu">
-                      <%= link_to welcome_show_path do %>
-                            <i class="fa fa-history "></i> Help
+                      <%= link_to cages_path do %>
+                            <i class="fa fa-th"></i> My Cages
                       <% end %>                      
                       <ul class="sub">
                           <li><a  href="calendar.html">Calendar</a></li>
@@ -145,6 +135,20 @@
                           <li><a  href="todo_list.html">Todo List</a></li>
                       </ul>
                   </li>
+                  
+
+                  <% if user_signed_in? %>
+                  <li class="sub-menu">
+                      <%= link_to stats_path(current_user) do %>
+                            <i class="fa fa-bar-chart-o "></i> Statistics
+                      <% end %>                      
+                      <ul class="sub">
+                          <li><a  href="calendar.html">Calendar</a></li>
+                          <li><a  href="gallery.html">Gallery</a></li>
+                          <li><a  href="todo_list.html">Todo List</a></li>
+                      </ul>
+                  </li>
+                  <% end %>
                   
                   
 

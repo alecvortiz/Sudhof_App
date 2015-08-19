@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/personal/:id' => 'cages#personal', as: :cages_personal
 
+  get '/stats/:id' => 'cages#stats', as: :stats
+
   resources :users do
     resources :cages
     resources :solutions

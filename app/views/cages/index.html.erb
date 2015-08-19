@@ -1,5 +1,4 @@
 
-<%= javascript_include_tag "path/to/highcharts.js", "chartkick" %>
 
 <div class="pagina">
 <p>
@@ -25,18 +24,14 @@
 
 </p>
 
- <div class="chart" style="float: right; width: 500px;border:3px solid black; background:lightgreen;">
-                        <h3> Cages by Genotype </h3>
-                        <p><%= pie_chart current_user.cages.group(:line).count %></p>
-                        <h3> Cages by Type </h3>
-                        <p><%= pie_chart current_user.cages.group(:cage_type).count %></p>
-                        </div>
+
+
+
 <% count = 0 %>
 <% x = "" %>
 <% y = "" %>
 <% cage_count = 0 %>
 <% @cages.order(:line, :cage_type, :created_at).reverse.each do |cage| %>
-
 
 <% if count == 0 %>
     <% x = cage.line %>
@@ -91,6 +86,7 @@
   <p>
 
   </p>
+
 
 <% end %>
 
