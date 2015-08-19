@@ -14,9 +14,9 @@
         <th>Gender</th>
         <th>Virus</th>
       </tr>
-      <% @cages.each do |cage| %>
+      <% @cages.order(:line, :cage_type).each do |cage| %>
       <% mice = cage.animals %>
-        <% mice.each do |mouse| %>
+        <% mice.order(:tag).each do |mouse| %>
       <tr>
         <% if cage.id != curr_id %>
           <td><%= cage.cage_type %></td>
