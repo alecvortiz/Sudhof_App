@@ -66,7 +66,7 @@
     <% end %>
   </p>
    
- <% cage.animals.each do |animal| %>
+ <% cage.animals.order(:tag).each do |animal| %>
 <div class="mice"><strong><%= animal.tag %><img src= "../img/mouse2.png" HEIGHT = 15 WIDTH = auto></strong></div>
 <% end %>
 
