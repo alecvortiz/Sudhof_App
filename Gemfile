@@ -49,7 +49,7 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-group :development. :test do
+group :development, :test do
   gem 'sqlite3'
 
   gem 'pry-rails'
