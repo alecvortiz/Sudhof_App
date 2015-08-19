@@ -101,7 +101,8 @@
                     	<i class="fa fa-home"></i> Home
                     <% end %>
                   </li>
-
+                  
+                  <% if user_signed_in? && current_user.role == "admin" %>
                   <li class="sub-menu">
                           <%= link_to users_path do %>
                             <i class="fa fa-users"></i> All Users
@@ -111,6 +112,7 @@
                           <li><a  href="form_component.html">Form Components</a></li>
                       </ul>
                   </li>
+                  <% end %>
 
                   <li class="sub-menu">
                       <%= link_to cages_path do %>
