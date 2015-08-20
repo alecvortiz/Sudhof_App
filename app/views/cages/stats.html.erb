@@ -4,17 +4,13 @@
 <div class="pagina">
 <h2>Statistics</h2>
 <h3>Total Cages: <%= @cages.count %> </h3>
-<div class="row">
 
-<div class="col-md-2">
 <div class="chart" style="width: 430px;border:3px solid black; background:lightgreen;float:left;">
 	<h3> Cages by Genotype </h3>
 	<p><%= pie_chart @cages.group(:line).count %></p>
 </div>
-</div>
 
-<div class="col-md-2">
-<div class="o" style="padding-left:300px">
+<div class="o" style="padding-left:445px;">
 
 <div class="chart" style="width: 430px;border:3px solid black; background:lightgreen;">
 	<h3> Cages by Type </h3>
@@ -22,8 +18,7 @@
 </div>
 </div>
 
-</div>
-</div>
+
 
 <p>
 
@@ -31,7 +26,7 @@
 
 <div class="chart" style="width: 877px;border:3px solid black; background:lightblue;">
 	<h3> Created At </h3>
-	<%= line_chart @cages.group_by_day(:created_at).count %>
+	<%= line_chart @cages.group(:created_at).count %>
 </div>
 
 </div>
