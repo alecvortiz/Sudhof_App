@@ -26,9 +26,8 @@
 
 <div class="chart" style="width: 877px;border:3px solid black; background:lightblue;">
 	<h3> Created At </h3>
-	<%= line_chart @cages.map{|cage|
-    {line: cage.name, data: cage.group_by_day(:created_at)}
-} %>
+	<%= line_chart @cages.group(:line).group_by_day(:created_at).count %>
+
 </div>
 
 </div>
