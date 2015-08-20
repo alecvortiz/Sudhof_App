@@ -1,4 +1,7 @@
 <div class="pagina">
+<div style="position:fixed;padding-left:250px;top:-5px;z-index:99999999;color:white;">
+  <h2><b>Edit <%=@user.name%></b></h2>
+</div>
 <div class="container">
     <h1>Edit User</h1>
     <%= simple_form_for(@user, url: user_path(@user.id), html: { method: :put }) do |f| %>

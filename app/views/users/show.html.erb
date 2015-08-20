@@ -1,7 +1,11 @@
+    <% user = User.find params[:id] %>
+
 <div class="pagina">
+<div style="position:fixed;padding-left:250px;top:-5px;z-index:99999999;color:white;">
+  <h2><b><%=user.name%>'s Profile</b></h2>
+</div>
 <div class="container">
 
-    <% user = User.find params[:id] %>
     <h1><%=user.name%>'s Profile <%= link_to 'Edit User', edit_user_path(user), :class => 'btn btn-warning' %> 
      <%= link_to 'Delete User', @user,
             method: :delete, :class => 'btn btn-danger',

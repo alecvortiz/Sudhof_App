@@ -13,7 +13,13 @@
 <% inferno %>
 
 <div class="pagina">
-<h1> Researchers </h1>
+<div style="position:fixed;padding-left:250px;top:-5px;z-index:99999999;color:white;">
+  <h2><b>All Users</b></h2>
+</div>
+
+<h3> Total Researchers: <%= User.count %> </h3> 
+
+<h3> Total Cages: <%= Cage.count %> </h3>
 
 <p> 
 	<%= form_tag users_path, method: :get do |f| %>
@@ -34,8 +40,5 @@
 </div>
 <% end %>
 
-<h3> Total Researchers: <%= User.count %> </h3> 
 
-
-<h3> Total Cages: <%= Cage.count %> </h3>
 </div>
