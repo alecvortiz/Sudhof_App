@@ -1,9 +1,8 @@
 
-
 <div class="pagina">
 <p>
   <p>
-  <h2>Total Cages: <%= @cages.count %></h2>
+  <h2>My Cages</h2>
   </p>
 </p>
 
@@ -29,8 +28,14 @@
 <% x = "" %>
 <% y = "" %>
 <% cage_count = 0 %>
+<% cols_row = 0 %>
 
 <% @cages.order(:line, :cage_type, :created_at).reverse.each do |cage| %>
+<% if cols_row == 4%>
+  <div class="row" style="padding-bottom:5px;">
+
+  <% cols_row = 0 %>
+<% end %>
 
 <% if count == 0 %>
     <% x = cage.line %>
@@ -39,11 +44,15 @@
   <% else %>
     <% y = cage.line %>
     <% if x != y %>
+          <% cols_row = 0 %>
+          <div class="row"></div>
+
       <h2><%= y %></h2>
       <% x = y %>
     <% end %>
   <% end %>
 
+<div class="col-md-3">
  <div class="cage">
  <p><strong><%= cage.line %></strong></p>
 
@@ -81,7 +90,14 @@
                           data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-xs"%> </td>
       </p>
     </tr>
+  </div>
    </div>
+
+   <% if cols_row == 4 %>
+    </div>
+    <% cols_row = 0 %>
+   <% end %>
+             <% cols_row = cols_row + 1 %>
 
   <p>
 
@@ -90,6 +106,12 @@
 
 
 <% end %>
+
+<div class="container">
+<div class="row">
+<h3> Total Cages: <%= @cages.count %> </h3>  
+</div>
+</div>
 
 </div>
 

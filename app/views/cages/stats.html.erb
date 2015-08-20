@@ -25,9 +25,8 @@
 </p>
 
 <div class="chart" style="width: 877px;border:3px solid black; background:lightblue;">
-	<h3> Created At </h3>
+	<h3> Date Created </h3>
 	<%= line_chart @cages.group(:line).group_by_day(:created_at).count %>
-
 </div>
 
 </div>

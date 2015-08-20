@@ -1,6 +1,6 @@
 <div class="pagina">
 
-<h2><%= @user.name%>'s Cages</h2>
+<h2>Total Cages: <%= @cages.count %></h2>
 
 <p>
   <%= form_tag cages_personal_path, method: :get do |f| %>
@@ -71,6 +71,6 @@
 </p>
 </div>
 <% end %>
-<h3> Total Cages: <%= @cages.count %> </h3>  
+ 
 
 </div>
