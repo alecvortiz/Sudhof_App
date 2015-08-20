@@ -2,7 +2,7 @@ class Cage < ActiveRecord::Base
 	belongs_to :user
 	has_many :animals
 
-  validates :cage_type, :line, :num_litters, :pups, presence: true
+  validates :cage_type, :line, :num_litters, presence: true
 
 
 	def self.to_csv(options = {})
