@@ -11,12 +11,15 @@
 <h3>Total Cages: <%= @cages.count %> </h3>
 
 <% if current_user.role == "admin" %>
-<div class="chart" style="border:3px solid black; background:lightgreen;">
+<div class="chart" style="width: 430px; border:3px solid black; background:lightgreen;">
     <h3> Cages by User </h3> 
     <% users = User.all %>
     <%= column_chart users.map{|user| {:name => user.name, :data => user.cages.group(:user_id).count}
 } %>                
 </div>
+<p>
+
+</p>
 <% end %>
 
 <div class="chart" style="width: 430px;border:3px solid black; background:lightgreen;float:left;">
