@@ -50,6 +50,11 @@ body {
      padding-top: 5px;
 }
 
+.welcomeindex {
+    background-image: url("http://search.excitingads.com/wp-content/uploads/2015/06/science-wallpapers.jpg");
+    background-size: 100%;
+}
+
 .pagina {
     padding: 65px;
     padding-left: 250px;

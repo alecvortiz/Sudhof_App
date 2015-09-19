@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def index
-		redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
+		# redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
 		if params[:q]
 			@users = User.where("LOWER(email) LIKE ? or LOWER(name) LIKE ?", "%#{params[:q].downcase}%", "%#{params[:q].downcase}%")
 		else
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
+		# redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
         @user = User.find(params[:id])
 	end
 

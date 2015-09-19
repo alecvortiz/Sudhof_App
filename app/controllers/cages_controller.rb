@@ -45,7 +45,7 @@ class CagesController < ApplicationController
 	 end
 
 	 def personal
-	 	redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
+	 	# redirect_to root_path, notice: "You need to be an admin to view that page." unless current_user && current_user.admin?
 	 	@user = User.find params[:id]
 	 	if params[:q]
 			@cages = @user.cages.where("LOWER(line) LIKE ? or LOWER(cage_type) LIKE ?", "%#{params[:q].downcase}%", "%#{params[:q].downcase}%")

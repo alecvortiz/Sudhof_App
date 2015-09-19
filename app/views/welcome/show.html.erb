@@ -13,11 +13,14 @@
 	<h3>3. My Cages </h3>
 	<p> The "My Cages" page shows all of your cages. You can search for cages by cage type or genotype using the search bar at the top of the page. The graphs to the left display the percentage of cages you have by genotype and cage type. Finally, by clicking the "Excel" button you can download an excel sheet that holds all the data (both cages and mice) held in my cages.
 	</p>
-	<h3> 4. Changing your Passowrd </h3>
+	<h3> 4. Statistics </h3>
+	<p> The statistics page has graphs which display the various distributions of attributes of cages such as genotype, cage type, and the date the cage was created.
+	</p>
+	<h3> 5. Changing your Passowrd </h3>
 	<p> You can change your password at any time by clicking the "edit profile" button at the top right corner of the screen.
 	</p>
 	<% if current_user.role == "admin" %>
-	<h3> 5. All Users </h3>
+	<h3> 6. All Users </h3>
 	<p> By clicking on the "all users" tab in the navigation bar, admins can view the profiles of all users as well as their cages and animals. On the "all users" page you can use the search bar to find particular users and view their cages by clicking on the "view cages" button in their profile box.
 	</p>
 	<% end %>

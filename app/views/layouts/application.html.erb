@@ -104,7 +104,7 @@
                     <% end %>
                   </li>
 
-                  <% if user_signed_in? && current_user.role == "admin" %>
+                  <% if user_signed_in? %>
                   <li class="sub-menu">
                           <%= link_to users_path do %>
                             <i class="fa fa-users"></i> All Users
