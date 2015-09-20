@@ -30,12 +30,12 @@ Premium: http://www.gridgum.com
 body {
    color: #797979;
 	background: #f2f2f2;
-    color: white;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
     font-size:13px;
-   
+    background-image: url("http://images4.fanpop.com/image/photos/17500000/cool-background-random-17506457-2299-1437.jpg");
+    background-size: 100%;
 }
 
 .welcome {
@@ -43,7 +43,10 @@ body {
    
 }
 
-
+/*.welcomeindex {
+    color: #797979;
+    background: #f2f2f2;
+}*/
 
 .cage {
      width:200px;
